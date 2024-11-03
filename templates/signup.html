@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Job Search Portal</title>
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Link to the new stylesheet -->
+    <style>
+        /* Specific styles for signup.html */
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #4d4d4d); /* Space-like background */
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+        button {
+            background-color: #5cb85c;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <a href="index.html">Home</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+        <div>
+            <a href="/login">Login</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="logo">
+            <img src="your-logo-url.png" alt="Logo" width="100"> <!-- Replace with your logo URL -->
+        </div>
+        <h1>Create an Account</h1>
+        <form id="signupForm" onsubmit="handleSignup(event)">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        function handleSignup(event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Perform sign-up logic (e.g., send data to the server)
+            console.log('Sign Up:', { username, email, password });
+            alert('Sign-up successful!'); // Display a success message
+        }
+    </script>
+</body>
+</html>
