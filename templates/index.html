@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Search Portal</title>
-    <link rel="stylesheet" href="/static/style.css"> <!-- Link to the new stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <nav class="navbar">
         <div>
-            <a href="index.html">Home</a>
-            <a href="signup.html">Sign Up</a>
+            <a href="/">Home</a>
+            <a href="/signup">Sign Up</a>
         </div>
         <div>
             <a href="/login">Login</a>

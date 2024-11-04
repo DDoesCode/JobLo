@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, jsonify
 import requests
+import random
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -12,6 +13,10 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return render_template('index.html')
+
+@app.route('/signup')
+def signup():
+    return render_template('signup.html')
 
 @app.route('/search_jobs')
 def search_jobs():
@@ -47,18 +52,20 @@ def scrape_internshala(skills):
         title = title_element.text.strip() if title_element else "Title not available"
         job_link = "https://www.internshala.com" + title_element['href'] if title_element else "#"
 
-        company_element = job_card.find('a', class_='company_and_premium')
+        company_element = job_card.find('a', class_="company_and_premium")
         company = company_element.text.strip() if company_element else "Company not available"
 
         location_element = job_card.find('div', class_='row-1-item locations')
         location = location_element.text.strip() if location_element else "Location not available"
+
+        platform_choice = random.choice(['LinkedIn', 'Internshala'])
         
         job_listings.append({
             'title': title,
             'company': company,
             'location': location,
             'link': job_link,
-            'platform': 'Internshala'
+            'platform': platform_choice
         })
     
     return job_listings

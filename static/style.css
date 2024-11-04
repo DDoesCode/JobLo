@@ -1,96 +1,139 @@
 /* Global Styles */
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Use a common background color for both pages */
+    box-sizing: border-box;
 }
 
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
 }
 
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: #333;
     padding: 10px 20px;
-    color: white;
 }
 
 .navbar a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
-    padding: 10px;
+    padding: 10px 15px;
+    font-weight: bold;
 }
 
 .navbar a:hover {
     background-color: #575757;
+    border-radius: 4px;
 }
 
+/* Main Container */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.container p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Search Box */
 .search-box {
-    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-input[type="text"] {
-    width: calc(100% - 100px);
+.search-box input[type="text"] {
+    width: 60%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 4px 0 0 4px;
+    outline: none;
 }
 
-button {
-    padding: 10px 15px;
+.search-box button {
+    padding: 10px 20px;
     border: none;
-    border-radius: 4px;
     background-color: #5cb85c;
-    color: white;
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 0 4px 4px 0;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-button:hover {
+.search-box button:hover {
     background-color: #4cae4c;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+/* Job Results Table */
+.results {
     margin-top: 20px;
+    text-align: left;
 }
 
-th, td {
+.results h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#jobTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#jobTable th,
+#jobTable td {
     padding: 10px;
     border: 1px solid #ddd;
     text-align: left;
 }
 
-th {
+#jobTable th {
     background-color: #f2f2f2;
+    font-weight: bold;
 }
 
-/* Additional styles for the sign-up page */
-.logo {
-    margin-bottom: 20px;
+#jobTable tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-.sign-up input {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
-}
-
-/* Responsive Styles */
+/* Responsive Design */
 @media (max-width: 600px) {
     .container {
         width: 90%;
+    }
+
+    .search-box input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 4px;
+    }
+
+    .search-box button {
+        width: 100%;
+        border-radius: 4px;
     }
 }
